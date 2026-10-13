@@ -1,0 +1,19 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent><groupId>org.springframework.boot</groupId><artifactId>spring-boot-starter-parent</artifactId><version>4.1.1</version><relativePath/></parent>
+  <groupId>com.rica</groupId><artifactId>rica-microservicios</artifactId><version>1.0.0</version><packaging>pom</packaging>
+  <modules><module>investigadores-service</module><module>publicaciones-service</module><module>eureka-server</module><module>gateway</module></modules>
+  <properties>
+    <java.version>25</java.version><spring-cloud.version>2025.1.3</spring-cloud.version>
+    <protobuf-maven-plugin.version>4.0.0</protobuf-maven-plugin.version><protobuf.version>4.29.3</protobuf.version><grpc.version>1.70.0</grpc.version>
+  </properties>
+  <dependencyManagement><dependencies>
+    <dependency><groupId>org.springframework.cloud</groupId><artifactId>spring-cloud-dependencies</artifactId><version>${spring-cloud.version}</version><type>pom</type><scope>import</scope></dependency>
+  </dependencies></dependencyManagement>
+  <build><pluginManagement><plugins>
+    <plugin><groupId>io.github.ascopes</groupId><artifactId>protobuf-maven-plugin</artifactId><version>${protobuf-maven-plugin.version}</version>
+      <configuration><protoc kind="binary-maven"><version>${protobuf.version}</version></protoc><plugins><plugin kind="binary-maven"><groupId>io.grpc</groupId><artifactId>protoc-gen-grpc-java</artifactId><version>${grpc.version}</version></plugin></plugins></configuration>
+      <executions><execution><goals><goal>generate</goal></goals></execution></executions>
+    </plugin>
+  </plugins></pluginManagement></build>
+</project>

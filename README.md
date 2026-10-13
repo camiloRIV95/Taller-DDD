@@ -2,6 +2,8 @@
 
 Implementación independiente del taller de DDD con Spring Boot 3, Java 17, PostgreSQL para investigadores y MongoDB para publicaciones.
 
+El taller de comunicación entre microservicios está en [`rica-microservicios/`](rica-microservicios/README.md) y en la rama `taller-comunicacion`.
+
 ## Requisitos
 
 - JDK 17 o superior

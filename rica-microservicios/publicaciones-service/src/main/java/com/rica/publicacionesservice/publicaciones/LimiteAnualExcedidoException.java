@@ -1,0 +1,2 @@
+package com.rica.publicacionesservice.publicaciones;
+public class LimiteAnualExcedidoException extends RuntimeException { public LimiteAnualExcedidoException(String message) { super(message); } }

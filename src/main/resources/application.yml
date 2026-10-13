@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: rica-api
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/rica}
+    username: ${DATABASE_USER:rica}
+    password: ${DATABASE_PASSWORD:rica}
+  jpa:
+    hibernate:
+      ddl-auto: update
+    open-in-view: false
+  data:
+    mongodb:
+      uri: ${MONGODB_URI:mongodb://localhost:27017/rica}
+server:
+  port: ${PORT:8080}
